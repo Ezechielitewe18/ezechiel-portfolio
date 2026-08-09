@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ezechiel Itewe — Technology • Creativity • Leadership</title>
+    <meta
+      name="description"
+      content="Portfolio d'Ezechiel Itewe — Étudiant en Sciences Informatiques, Créateur de contenus, Community Manager et passionné des systèmes embarqués. Basé à Kinshasa, RDC."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23090014'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='%237B3FF2' text-anchor='middle'%3EEI%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body class="antialiased">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 z-50 w-full transition-all duration-300"
+    >
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#hero" class="font-display text-xl font-bold text-white">
+          Ezechiel<span class="gradient-text">.dev</span>
+        </a>
+        <div class="hidden items-center gap-8 text-sm font-medium text-mist md:flex">
+          <a href="#about" class="nav-link transition-colors hover:text-white">À propos</a>
+          <a href="#skills" class="nav-link transition-colors hover:text-white">Compétences</a>
+          <a href="#projects" class="nav-link transition-colors hover:text-white">Projets</a>
+          <a href="#zemon" class="nav-link transition-colors hover:text-white">Zemon Crea</a>
+          <a href="#leadership" class="nav-link transition-colors hover:text-white">Leadership</a>
+          <a
+            href="#contact"
+            class="glow-btn violet rounded-full bg-gradient-to-r from-violet-brand to-blue-brand px-5 py-2 font-semibold text-white"
+          >
+            Me contacter
+          </a>
+        </div>
+        <button
+          id="menu-btn"
+          class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
+          aria-label="Ouvrir le menu"
+        >
+          <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden border-t border-white/5 bg-night/95 backdrop-blur md:hidden">
+        <div class="flex flex-col gap-4 px-6 py-6 text-sm font-medium text-mist">
+          <a href="#about" class="mobile-link">À propos</a>
+          <a href="#skills" class="mobile-link">Compétences</a>
+          <a href="#projects" class="mobile-link">Projets</a>
+          <a href="#zemon" class="mobile-link">Zemon Crea</a>
+          <a href="#leadership" class="mobile-link">Leadership</a>
+          <a
+            href="#contact"
+            class="mt-2 w-fit rounded-full bg-gradient-to-r from-violet-brand to-blue-brand px-5 py-2 font-semibold text-white"
+          >
+            Me contacter
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="hero" class="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <div class="hero-orb h-96 w-96 bg-violet-brand" style="top: -120px; left: -120px"></div>
+      <div class="hero-orb h-96 w-96 bg-blue-brand" style="bottom: -140px; right: -100px"></div>
+      <canvas id="particles" class="absolute inset-0 h-full w-full"></canvas>
+
+      <div class="relative z-10 mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2">
+        <div class="order-2 md:order-1">
+          <p class="animate-fade-up mb-4 flex items-center gap-2 text-sm font-medium text-mist">
+            <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+            Bonjour, je suis
+          </p>
+          <h1
+            class="animate-fade-up font-display text-5xl font-bold leading-tight text-white md:text-6xl"
+            style="animation-delay: 0.1s"
+          >
+            Ezechiel<br /><span class="gradient-text">Itewe</span>
+          </h1>
+          <p
+            class="animate-fade-up mt-5 text-base font-medium leading-relaxed text-mist md:text-lg"
+            style="animation-delay: 0.2s"
+          >
+            Étudiant en Sciences Informatiques • Créateur de contenus • Community Manager •
+            Passionné des systèmes embarqués
+          </p>
+          <p class="animate-fade-up mt-4 leading-relaxed text-mist/80" style="animation-delay: 0.3s">
+            Je combine technologie, communication digitale et leadership pour concevoir des
+            solutions numériques utiles et des contenus à impact.
+          </p>
+          <div class="animate-fade-up mt-8 flex flex-wrap gap-4" style="animation-delay: 0.4s">
+            <a
+              href="#projects"
+              class="glow-btn violet rounded-full bg-gradient-to-r from-violet-brand to-blue-brand px-7 py-3 font-semibold text-white"
+            >
+              Voir mes projets
+            </a>
+            <a
+              href="#zemon"
+              class="glow-btn outline rounded-full border border-violet-brand/40 px-7 py-3 font-semibold text-white"
+            >
+              Découvrir Zemon Crea
+            </a>
+            <a
+              href="#contact"
+              class="glow-btn blue rounded-full border border-blue-brand/40 px-7 py-3 font-semibold text-white"
+            >
+              Me contacter
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 mx-auto md:order-2" style="animation-delay: 0.3s">
+          <div class="relative">
+            <div class="absolute inset-0 -z-10 scale-105 rounded-3xl bg-gradient-to-br from-violet-brand to-blue-brand opacity-60 blur-xl"></div>
+            <div
+              class="flex h-80 w-80 items-center justify-center rounded-3xl border border-white/10 bg-night-card shadow-2xl md:h-96 md:w-96"
+            >
+              <div class="animate-float text-center">
+                <div
+                  class="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-violet-brand to-blue-brand font-display text-6xl font-bold text-white shadow-lg md:h-44 md:w-44"
+                >
+                  EI
+                </div>
+                <p class="mt-6 text-sm font-medium uppercase tracking-widest text-mist">
+                  Photo à venir
+                </p>
+                <p class="mt-1 text-xs text-mist/60">Ezechiel Itewe</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-mist/50">
+        <svg class="h-6 w-6 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7M19 6l-7 7-7-7" />
+        </svg>
+      </div>
+    </header>
+
+    <main>
+      <!-- À propos -->
+      <section id="about" class="relative py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-sm font-semibold uppercase tracking-widest text-violet-brand">À propos</p>
+          <h2 class="scroll-reveal mt-2 font-display text-3xl font-bold text-white md:text-4xl">
+            Un parcours, une vision
+          </h2>
+
+          <div class="mt-12 grid gap-8 md:grid-cols-2">
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8">
+              <h3 class="font-display text-lg font-semibold text-white">Mon parcours</h3>
+              <ul class="mt-6 space-y-5 text-sm text-mist">
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-brand"></span>
+                  <span>
+                    <span class="font-semibold text-white">Diplôme d'État — Collège Bosembo</span><br />
+                    Obtenu avec 67 %, un socle solide pour mes études supérieures.
+                  </span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-violet-brand"></span>
+                  <span>
+                    <span class="font-semibold text-white">UPC — Faculté des Sciences Informatiques</span><br />
+                    Passage prochain en L3
+                  </span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-brand"></span>
+                  <span>
+                    <span class="font-semibold text-white">Orientation : Réseaux & Systèmes</span><br />
+                    Un intérêt marqué pour l'infrastructure et l'ingénierie des systèmes.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8" style="transition-delay: 0.1s">
+              <h3 class="font-display text-lg font-semibold text-white">Qui suis-je ?</h3>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <span class="rounded-full border border-violet-brand/40 bg-violet-brand/10 px-4 py-2 text-sm font-medium text-white">Créatif</span>
+                <span class="rounded-full border border-blue-brand/40 bg-blue-brand/10 px-4 py-2 text-sm font-medium text-white">Curieux</span>
+                <span class="rounded-full border border-violet-brand/40 bg-violet-brand/10 px-4 py-2 text-sm font-medium text-white">Leader</span>
+                <span class="rounded-full border border-blue-brand/40 bg-blue-brand/10 px-4 py-2 text-sm font-medium text-white">Passionné de technologie</span>
+                <span class="rounded-full border border-violet-brand/40 bg-violet-brand/10 px-4 py-2 text-sm font-medium text-white">Engagé dans la communication digitale</span>
+              </div>
+              <p class="mt-6 text-sm leading-relaxed text-mist/80">
+                Je suis un étudiant curieux qui aime comprendre comment les choses fonctionnent
+                pour ensuite les expliquer simplement. Cette double casquette — technique et
+                communication — me permet de relier deux mondes : celui de l'ingénierie et celui
+                de la création de contenus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section id="skills" class="relative bg-night-soft py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-sm font-semibold uppercase tracking-widest text-violet-brand">Compétences</p>
+          <h2 class="scroll-reveal mt-2 font-display text-3xl font-bold text-white md:text-4xl">
+            Mes trois piliers
+          </h2>
+
+          <div class="mt-12 grid gap-8 md:grid-cols-3">
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-brand to-blue-brand text-white">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 19h18M5 5v14M19 5v14M7 9h4M7 13h4M7 17h4" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold text-white">Informatique</h3>
+              <ul class="mt-4 space-y-2 text-sm text-mist">
+                <li>Réseaux & routage</li>
+                <li>SQL</li>
+                <li>HTML / CSS / JS</li>
+                <li>Systèmes embarqués</li>
+                <li>Robotique</li>
+              </ul>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8" style="transition-delay: 0.1s">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-brand to-violet-brand text-white">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.55-2.28a1 1 0 011.45.89v10.78a1 1 0 01-.7.96L15 20M15 10L6.5 6.62M15 10v10M6.5 6.62l-4.3-1.6a1 1 0 00-1.2.66l-1 3.6a1 1 0 00.66 1.2L6 12M6.5 6.62L6 12m0 0L2.5 13.34a1 1 0 01-.95-.1L6 12m4-8.4L15 4" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold text-white">Création digitale</h3>
+              <ul class="mt-4 space-y-2 text-sm text-mist">
+                <li>Création de contenus smartphone</li>
+                <li>Montage vidéo mobile</li>
+                <li>Branding</li>
+                <li>Community management</li>
+              </ul>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8" style="transition-delay: 0.2s">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-brand to-blue-brand text-white">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 4a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold text-white">Leadership</h3>
+              <ul class="mt-4 space-y-2 text-sm text-mist">
+                <li>Gestion d'équipe</li>
+                <li>Communication</li>
+                <li>Organisation</li>
+                <li>Créativité</li>
+                <li>Résolution de problèmes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projets -->
+      <section id="projects" class="py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-sm font-semibold uppercase tracking-widest text-violet-brand">Projets</p>
+          <h2 class="scroll-reveal mt-2 font-display text-3xl font-bold text-white md:text-4xl">
+            Mes projets technologiques
+          </h2>
+
+          <!-- SALS : carte principale -->
+          <div class="scroll-reveal mt-12 overflow-hidden rounded-3xl border border-violet-brand/30 bg-night-card shadow-[0_0_60px_rgba(123,63,242,0.15)]">
+            <div class="grid md:grid-cols-2">
+              <div class="p-8 md:p-12">
+                <span class="inline-flex items-center gap-2 rounded-full bg-violet-brand/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-violet-brand">
+                  Projet phare
+                </span>
+                <h3 class="mt-5 font-display text-2xl font-bold text-white md:text-3xl">
+                  SALS — Smart Assistant Locker System
+                </h3>
+                <p class="mt-4 text-sm leading-relaxed text-mist/80">
+                  Un système de casiers intelligents assistés, alliant systèmes embarqués,
+                  programmation et pensée orientée solution.
+                </p>
+                <div class="mt-6 space-y-3 text-sm">
+                  <div class="rounded-xl border border-white/10 bg-night p-4">
+                    <p class="font-semibold text-white">Le problème</p>
+                    <p class="mt-1 text-mist/80">Des casiers simples sans suivi, sans sécurité et sans accessibilité pratique au quotidien.</p>
+                  </div>
+                  <div class="rounded-xl border border-white/10 bg-night p-4">
+                    <p class="font-semibold text-white">La solution</p>
+                    <p class="mt-1 text-mist/80">Un assistant connecté qui automatise l'ouverture, sécurise l'accès et simplifie l'usage.</p>
+                  </div>
+                  <div class="rounded-xl border border-white/10 bg-night p-4">
+                    <p class="font-semibold text-white">Ce que j'ai appris</p>
+                    <p class="mt-1 text-mist/80">Le travail sur un projet complet : analyse du besoin, conception, prototypage et amélioration continue.</p>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <span class="text-xs font-semibold uppercase tracking-widest text-mist/60">Technologies</span>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-mist">Systèmes embarqués</span>
+                    <span class="rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-mist">Microcontrôleurs</span>
+                    <span class="rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-mist">Capteurs</span>
+                    <span class="rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-mist">Raisonnement système</span>
+                  </div>
+                  <p class="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-400/10 px-4 py-1.5 text-xs font-semibold text-emerald-400">
+                    <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                    Projet en cours
+                  </p>
+                </div>
+              </div>
+              <div class="relative flex items-center justify-center bg-gradient-to-br from-violet-brand/10 to-blue-brand/10 p-12">
+                <div class="animate-float flex h-56 w-56 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-brand to-blue-brand font-display text-5xl font-bold text-white shadow-2xl">
+                  SALS
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Autres projets -->
+          <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-7">
+              <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-brand/15 text-blue-brand">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">Projets SQL</h3>
+              <p class="mt-2 text-sm text-mist/80">
+                Modélisation de bases de données, requêtes complexes et gestion de données.
+              </p>
+              <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-mist/60">Bases de données</span>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-7" style="transition-delay: 0.1s">
+              <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-violet-brand/15 text-violet-brand">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l3 3m0 0l-3-3m3 3L9 15m3-3l3-3m-3 3L9 9" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">Projets réseaux</h3>
+              <p class="mt-2 text-sm text-mist/80">
+                Configuration, routage et compréhension des architectures de communication.
+              </p>
+              <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-mist/60">Réseaux & systèmes</span>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-7" style="transition-delay: 0.2s">
+              <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-brand/15 text-blue-brand">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">Projets web</h3>
+              <p class="mt-2 text-sm text-mist/80">
+                Interfaces web et expériences utilisateur en HTML, CSS et JavaScript.
+              </p>
+              <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-mist/60">Front-end</span>
+            </div>
+
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-7 md:col-span-2 lg:col-span-3">
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-violet-brand/15 text-violet-brand">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 112 2v1a2 2 0 11-2-2zm0 9a2 2 0 112 2v1a2 2 0 11-2-2zm-4-4a2 2 0 112 2H8a2 2 0 11-1-1.73z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">Projets embarqués & robotique</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-mist/80">
+                    Expérimentations avec microcontrôleurs, capteurs et petites automatisations.
+                    Un univers qui m'anime : donner vie à la technologie dans le monde physique.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zemon Crea -->
+      <section id="zemon" class="relative bg-night-soft py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-sm font-semibold uppercase tracking-widest text-violet-brand">Zemon Crea</p>
+          <h2 class="scroll-reveal mt-2 font-display text-3xl font-bold text-white md:text-4xl">
+            Création de contenus professionnels
+          </h2>
+          <blockquote class="scroll-reveal mt-6 max-w-3xl border-l-2 border-violet-brand pl-5 text-mist/80 italic">
+            « Zemon Crea est une initiative de création de contenus professionnels, branding
+            digital et communication visuelle réalisée principalement avec smartphone. »
+          </blockquote>
+
+          <!-- Badge du créateur -->
+          <div class="scroll-reveal mt-12 mx-auto flex max-w-2xl flex-col items-center gap-8 rounded-2xl border border-white/10 bg-night-card p-8 md:flex-row md:gap-8 md:text-left text-center">
+            <div class="relative shrink-0">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-violet-brand to-blue-brand opacity-60 blur-md"></div>
+              <div class="relative flex h-32 w-32 items-center justify-center rounded-full border-2 border-violet-brand/50 bg-gradient-to-br from-violet-brand to-blue-brand font-display text-5xl font-bold text-white shadow-2xl">
+                EI
+              </div>
+              <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-violet-brand/40 bg-night px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-violet-brand">
+                Créateur pro
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-semibold text-white">Le créateur derrière la marque</h3>
+              <p class="mt-2 text-sm leading-relaxed text-mist/80">
+                100% smartphone. Je monte, je filme et je conçois des contenus à impact depuis
+                mon téléphone. Ce badge deviendra ma photo.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-8 md:grid-cols-2">
+            <a
+              href="https://www.tiktok.com/@zemon_crea"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="scroll-reveal card-lift group rounded-2xl border border-white/10 bg-night-card p-8"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-brand to-blue-brand text-white">
+                  <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z" />
+                  </svg>
+                </div>
+                <span class="text-sm font-semibold text-violet-brand opacity-0 transition-opacity group-hover:opacity-100">→</span>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-white">TikTok</h3>
+              <p class="mt-2 text-sm text-mist/80">
+                Vidéos courtes à impact, montage mobile et storytelling visuel.
+              </p>
+              <span class="mt-4 inline-block text-sm font-semibold text-violet-brand">Voir les réalisations →</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/agence_zemon_crea/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="scroll-reveal card-lift group rounded-2xl border border-white/10 bg-night-card p-8"
+              style="transition-delay: 0.1s"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-brand to-violet-brand text-white">
+                  <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 3.68a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 2.02a4.14 4.14 0 110 8.28 4.14 4.14 0 010-8.28zm6.4-2.31a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+                  </svg>
+                </div>
+                <span class="text-sm font-semibold text-blue-brand opacity-0 transition-opacity group-hover:opacity-100">→</span>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-white">Instagram</h3>
+              <p class="mt-2 text-sm text-mist/80">
+                Branding visuel, contenu esthétique et communication de marque.
+              </p>
+              <span class="mt-4 inline-block text-sm font-semibold text-blue-brand">Voir les réalisations →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leadership -->
+      <section id="leadership" class="py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-sm font-semibold uppercase tracking-widest text-violet-brand">Leadership & Engagement</p>
+          <h2 class="scroll-reveal mt-2 font-display text-3xl font-bold text-white md:text-4xl">
+            Au-delà de la technique
+          </h2>
+
+          <div class="mt-12 grid items-stretch gap-8 md:grid-cols-2">
+            <div class="flex flex-col items-center justify-center rounded-2xl border border-violet-brand/25 bg-night-card p-8 text-center shadow-[0_0_50px_rgba(123,63,242,0.12)] md:p-10">
+              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-brand to-blue-brand text-white">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 4a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-semibold text-white">CEO — Zemon Crea</h3>
+              <p class="mt-3 text-sm leading-relaxed text-mist/80">
+                À la tête de l'agence, je porte la vision, j'organise l'équipe et je conduis les
+                projets créatifs de bout en bout.
+              </p>
+              <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <span class="rounded-full border border-violet-brand/40 bg-violet-brand/10 px-4 py-2 text-sm font-medium text-white">Organisation d'équipe</span>
+                <span class="rounded-full border border-blue-brand/40 bg-blue-brand/10 px-4 py-2 text-sm font-medium text-white">Créativité</span>
+                <span class="rounded-full border border-violet-brand/40 bg-violet-brand/10 px-4 py-2 text-sm font-medium text-white">Gestion de projets</span>
+                <span class="rounded-full border border-blue-brand/40 bg-blue-brand/10 px-4 py-2 text-sm font-medium text-white">Leadership</span>
+              </div>
+            </div>
+
+            <!-- Badge de service -->
+            <div class="scroll-reveal flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-night-card p-8">
+              <div class="relative w-64 rounded-xl border border-amber-100/20 bg-gradient-to-b from-zinc-700 to-night p-2 shadow-[0_0_40px_rgba(123,63,242,0.2)]">
+                <div class="flex h-3 overflow-hidden rounded-t-lg">
+                  <div class="flex-1 bg-violet-brand"></div>
+                  <div class="flex-1 bg-blue-brand"></div>
+                  <div class="flex-1 bg-white/80"></div>
+                  <div class="flex-1 bg-violet-brand/60"></div>
+                  <div class="flex-1 bg-blue-brand/60"></div>
+                </div>
+                <div class="rounded-b-lg bg-gradient-to-r from-violet-brand to-blue-brand py-1.5 text-center">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Zemon Crea</span>
+                </div>
+                <div class="relative mt-2 flex h-48 items-center justify-center overflow-hidden rounded-lg border border-dashed border-white/25 bg-night shadow-[inset_0_2px_12px_rgba(0,0,0,0.6)]">
+                  <div class="absolute inset-0 bg-gradient-to-br from-violet-brand/10 to-blue-brand/10"></div>
+                  <div class="relative text-center">
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-lg bg-gradient-to-br from-violet-brand to-blue-brand font-display text-4xl font-bold text-white shadow-lg">
+                      EI
+                    </div>
+                    <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-mist/70">Photo à venir</p>
+                  </div>
+                  <span class="absolute left-2 top-2 rounded bg-white/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-mist/60">Photo</span>
+                </div>
+                <div class="mt-2 rounded-lg bg-white/5 py-2.5 text-center">
+                  <p class="font-display text-sm font-bold text-white">Ezechiel Itewe</p>
+                  <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-brand">CEO — Zemon Crea</p>
+                </div>
+              </div>
+              <p class="mt-4 max-w-xs text-center text-xs text-mist/60">
+                Espace réservé à ma photo de profil — façon badge de service.
+              </p>
+            </div>
+          </div>
+
+          <div class="scroll-reveal mt-8 rounded-2xl border border-violet-brand/25 bg-gradient-to-r from-violet-brand/10 to-blue-brand/10 p-8 md:p-10">
+            <p class="text-center text-sm italic leading-relaxed text-mist md:text-base">
+              « Ma foi chrétienne influence mes valeurs de travail : intégrité, discipline,
+              service et respect des autres. »
+            </p>
+            <p class="mt-6 text-center font-display text-lg font-semibold text-white md:text-xl">
+              « Je puis tout par celui qui me fortifie »
+            </p>
+            <p class="mt-1 text-center text-xs font-semibold uppercase tracking-[0.25em] text-violet-brand">
+              Philippiens 4 : 13
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="relative bg-night-soft py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="scroll-reveal text-center text-sm font-semibold uppercase tracking-widest text-violet-brand">Contact</p>
+          <h2 class="scroll-reveal mt-2 text-center font-display text-3xl font-bold text-white md:text-4xl">
+            Travaillons ensemble
+          </h2>
+          <p class="scroll-reveal mx-auto mt-4 max-w-xl text-center text-sm text-mist/80">
+            Un projet technique, un besoin de contenu ou une collaboration ? Parlons-en.
+          </p>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-3">
+            <div class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8 text-center">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-violet-brand/15 text-violet-brand">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.66 16.66A8 8 0 016.34 5.34L8 4h8l-1.34 3.34L12 9l3 3 3-3 3 3-1.34 1.34A8 8 0 0117.66 16.66z" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">Localisation</h3>
+              <p class="mt-2 text-sm text-mist">Kinshasa, Gombe — RDC</p>
+            </div>
+
+            <a
+              href="https://wa.me/243818395949"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8 text-center"
+              style="transition-delay: 0.1s"
+            >
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-400">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35zM12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.73.98.99-3.64-.24-.38a9.82 9.82 0 01-1.51-5.26c0-5.43 4.42-9.85 9.86-9.85a9.79 9.79 0 016.97 2.89 9.8 9.8 0 012.89 6.97c0 5.43-4.42 9.85-9.83 9.85zm8.4-18.25A11.8 11.8 0 0012.05 0C5.49 0 .14 5.35.14 11.93c0 2.1.55 4.15 1.6 5.95L0 24l6.25-1.64a11.9 11.9 0 005.8 1.48h.01c6.56 0 11.91-5.35 11.91-11.93a11.83 11.83 0 00-3.52-8.37z" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">WhatsApp</h3>
+              <p class="mt-2 text-sm text-mist">Cliquez pour ouvrir la conversation</p>
+            </a>
+
+            <a
+              href="mailto:ezechielitewe39@gmail.com"
+              class="scroll-reveal card-lift rounded-2xl border border-white/10 bg-night-card p-8 text-center"
+              style="transition-delay: 0.2s"
+            >
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-blue-brand/15 text-blue-brand">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 2l8 6 8-6" />
+                </svg>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-white">Email</h3>
+              <p class="mt-2 text-sm text-mist">Cliquez pour ouvrir l'application mail</p>
+            </a>
+          </div>
+
+          <div class="scroll-reveal mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://www.tiktok.com/@zemon_crea"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="glow-btn outline rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-violet-brand/60 hover:text-white"
+            >
+              TikTok Zemon Crea
+            </a>
+            <a
+              href="https://www.instagram.com/agence_zemon_crea/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="glow-btn outline rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-blue-brand/60 hover:text-white"
+            >
+              Instagram Zemon Crea
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-night py-10">
+      <div class="mx-auto max-w-6xl px-6 text-center">
+        <p class="font-display text-xl font-bold text-white">
+          Ezechiel Itewe <span class="text-mist/60">•</span>
+          <span class="gradient-text">Technology • Creativity • Leadership</span>
+        </p>
+        <p class="mt-3 text-sm italic text-mist/70">
+          « Concevoir des solutions numériques utiles et des contenus qui inspirent. »
+        </p>
+        <p class="mt-6 text-xs text-mist/50">
+          © <span id="year"></span> Ezechiel Itewe — Kinshasa, RDC
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
