@@ -121,3 +121,27 @@ body {
   opacity: 0.5;
   pointer-events: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .glow-btn:hover,
+  .card-lift:hover {
+    transform: none;
+  }
+}

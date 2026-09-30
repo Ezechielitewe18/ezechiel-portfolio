@@ -49,22 +49,30 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".scroll-reveal").forEach((el) => revealObserver.observe(el));
 
 const particlesCanvas = document.getElementById("particles");
-const ctx = particlesCanvas.getContext("2d");
+const ctx = particlesCanvas?.getContext("2d") ?? null;
 let particles = [];
 const COLORS = ["123, 63, 242", "59, 130, 246", "255, 255, 255"];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let cssW = 0;
+let cssH = 0;
+let rafId = null;
 
 function resizeCanvas() {
-  particlesCanvas.width = particlesCanvas.offsetWidth;
-  particlesCanvas.height = particlesCanvas.offsetHeight;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cssW = particlesCanvas.offsetWidth;
+  cssH = particlesCanvas.offsetHeight;
+  particlesCanvas.width = Math.round(cssW * dpr);
+  particlesCanvas.height = Math.round(cssH * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
 function createParticles() {
   particles = [];
-  const count = Math.min(70, Math.floor(particlesCanvas.width / 18));
+  const count = Math.min(70, Math.floor(cssW / 18));
   for (let i = 0; i < count; i++) {
     particles.push({
-      x: Math.random() * particlesCanvas.width,
-      y: Math.random() * particlesCanvas.height,
+      x: Math.random() * cssW,
+      y: Math.random() * cssH,
       radius: Math.random() * 1.8 + 0.4,
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
@@ -74,15 +82,15 @@ function createParticles() {
 }
 
 function drawParticles() {
-  ctx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
+  ctx.clearRect(0, 0, cssW, cssH);
 
   for (let i = 0; i < particles.length; i++) {
     const p = particles[i];
     p.x += p.vx;
     p.y += p.vy;
 
-    if (p.x < 0 || p.x > particlesCanvas.width) p.vx *= -1;
-    if (p.y < 0 || p.y > particlesCanvas.height) p.vy *= -1;
+    if (p.x < 0 || p.x > cssW) p.vx *= -1;
+    if (p.y < 0 || p.y > cssH) p.vy *= -1;
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
@@ -105,18 +113,51 @@ function drawParticles() {
       }
     }
   }
-  requestAnimationFrame(drawParticles);
+  rafId = requestAnimationFrame(drawParticles);
 }
 
-window.addEventListener("resize", () => {
+function startParticles() {
+  if (!ctx || reduceMotion.matches || rafId !== null) return;
   resizeCanvas();
   createParticles();
-});
+  rafId = requestAnimationFrame(drawParticles);
+}
 
-if (particlesCanvas) {
-  resizeCanvas();
-  createParticles();
-  drawParticles();
+function stopParticles() {
+  if (rafId === null) return;
+  cancelAnimationFrame(rafId);
+  rafId = null;
+}
+
+if (ctx) {
+  startParticles();
+
+  new IntersectionObserver(
+    ([entry]) => (entry.isIntersecting ? startParticles() : stopParticles()),
+    { threshold: 0 }
+  ).observe(particlesCanvas);
+
+  new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) startParticles();
+    },
+    { rootMargin: "200px" }
+  ).observe(particlesCanvas);
+
+  reduceMotion.addEventListener("change", () => {
+    if (reduceMotion.matches) stopParticles();
+    else startParticles();
+  });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (!ctx || rafId === null || reduceMotion.matches) return;
+      resizeCanvas();
+      createParticles();
+    },
+    { passive: true }
+  );
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();

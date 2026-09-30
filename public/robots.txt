@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ezechielitewe18.github.io/ezechiel-portfolio/sitemap.xml
