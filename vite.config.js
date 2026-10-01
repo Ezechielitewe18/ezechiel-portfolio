@@ -11,6 +11,11 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         cv: fileURLToPath(new URL("./cv.html", import.meta.url)),
       },
+      output: {
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name][extname]",
+      },
     },
   },
 });
