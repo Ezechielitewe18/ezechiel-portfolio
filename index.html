@@ -21,7 +21,13 @@
     <meta property="og:url" content="https://ezechielitewe18.github.io/ezechiel-portfolio/" />
     <meta
       property="og:image"
-      content="https://ezechielitewe18.github.io/ezechiel-portfolio/images/accueil.jpg"
+      content="https://ezechielitewe18.github.io/ezechiel-portfolio/images/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Ezechiel Itewe — Étudiant en L3 Ingénierie Logicielle, Développeur PHP, Fondateur de GLOBITE"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ezechiel Itewe — Technology • Creativity • Leadership" />
@@ -31,7 +37,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://ezechielitewe18.github.io/ezechiel-portfolio/images/accueil.jpg"
+      content="https://ezechielitewe18.github.io/ezechiel-portfolio/images/og-image.jpg"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,7 +49,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23090014'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='%237B3FF2' text-anchor='middle'%3EEI%3C/text%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/main-CcdFBDuc.js"></script>
+    <script type="module" crossorigin src="./assets/main-CaQZhsYl.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/main-BdE2G6DD.css">
   </head>
   <body class="antialiased">
@@ -74,6 +80,8 @@
           id="menu-btn"
           class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
           aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -83,7 +91,10 @@
           </svg>
         </button>
       </div>
-      <div id="mobile-menu" class="hidden border-t border-white/5 bg-night/95 backdrop-blur md:hidden">
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-white/5 bg-night/95 backdrop-blur md:hidden"
+      >
         <div class="flex flex-col gap-4 px-6 py-6 text-sm font-medium text-mist">
           <a href="#about" class="mobile-link">À propos</a>
           <a href="#globite" class="mobile-link">Globite</a>
